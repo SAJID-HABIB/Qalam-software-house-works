@@ -16,14 +16,14 @@ function step2() {
   })
 }
 
-step1()
+Promise.any([step1(),step2()])
 .then((res) => {
   console.log(res);
-  return step2();
+  // return step2();
 })
-.then((res,) => {
-  console.log(res);
-})
+// .then((res,) => {
+//   console.log(res);
+// })
 .catch((err) => {
   console.log(err);
 });
