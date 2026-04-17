@@ -47,3 +47,12 @@ step2()
   console.log("error",error);
   
 });
+
+
+Promise.resolve(5)
+.then(num => {
+  return Promise.resolve(num * 2);
+})
+.then(rseult => console.log(rseult));
+
+
