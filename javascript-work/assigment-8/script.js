@@ -1,7 +1,9 @@
 let color = [];
 
 function addColorStart() {
-  let newColor = prompt("ENter the color to add the beggning");
+  let newColor = prompt("ENter the color to add the beggning"); 
+  // throw new Error("some thinf went rong");
+   
   return new Promise((resolve, reject) => {
     if (!newColor || newColor.trim() === "") {
       reject("no color entered");
@@ -101,9 +103,25 @@ async function runClor() {
 
     let updatedArray2 = await addColorStart();
     console.log(updatedArray2);
+
+    let updatedArray3 = await addTwoClorStart();
+    console.log(updatedArray3);
+
+    let updatedArray4 = await deleteFirst();
+    console.log(updatedArray4);
+
+    let updatedArray5 = await deleteLast();
+    console.log(updatedArray5);
     
+
+    let updatedArray6 = await addColIndex();
+    console.log(updatedArray6);
+    
+    let updatedArray7 = await deletColIndex();
+    console.log(updatedArray7);
     
   } catch (error) {
+    console.log(error);
     
   }
 }
