@@ -24,3 +24,29 @@ fetch("https://fakestoreapi.com/products")
 
   }
 })
+
+
+// by using async await 
+
+async function apiData ()  {
+  try {
+    let response = await fetch ("https://fakestoreapi.com/products");
+    let data = await response.json();
+    let apiData = document.getElementById("product");
+    for (let i = 0; i < 6; i++) {
+      let result = data[i];
+      let card = document.createElement("div");
+      card.classList.add("card");
+      card.innerHTML = `
+      <h1>"ID :"<p>${result.id}</p></h1>
+      <h3>price: ${result.price}</h3>
+      `
+      apiData.appendChild(card);
+
+    }
+  } catch (error) {
+    console.log("Error :",error);
+  }
+};
+
+apiData();
