@@ -1,0 +1,60 @@
+body {
+  font-family: Arial;
+}
+
+#count {
+  text-align: center;
+  margin: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px;
+  display: inline-block;
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+button {
+  padding: 8px 10px;
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: darkblue;
+}
+
+/* 🔥 POPUP */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:black;
+  background: rgba(0,0,0,0.6);
+}
+
+.popup-content {
+  background: white;
+  width: 50%;
+  margin: 8% auto;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+#closeBtn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
