@@ -12,12 +12,9 @@ fetch("https://fakestoreapi.com/products")
     <p><h3>price :</h3>${result.price}</p>
     <p><h3>Description :</h3>${result.description}</p>
     <p><h3>category :</h3>${result.category}</p>
-
-
-
-
     `
   apiData.appendChild(card);
 
   }
 })
+
