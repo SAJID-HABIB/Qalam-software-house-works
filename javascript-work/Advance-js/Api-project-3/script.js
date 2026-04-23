@@ -1,7 +1,7 @@
 async function apiDta() {
   
   try {
-    let respones = await fetch("https://fakestoreapi.com/products");
+    let respones = await fetch("https://jsonplaceholder.typicode.com/posts");
   let data = await respones.json();
   console.log(data);
   
