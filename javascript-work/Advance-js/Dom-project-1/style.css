@@ -1,142 +1,109 @@
 body {
-  background-color: rgb(187, 184, 181);
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: #f0f2f5;
+  font-family: Arial, sans-serif;
+  margin: 20px;
 }
 
+/* Top bar */
 .top {
   display: flex;
-  margin-top: 20px;
-  background-color: antiquewhite;
-  padding: 10px;
-  border-radius: 5px;
   justify-content: space-between;
   align-items: center;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
 }
 
-.newBtn{
-  background-color: rgb(77, 77, 241);
-  width: auto;
-  padding: 10px 20px; 
-  color: white;
-  border-radius: 5px;
+/* Buttons */
+.newBtn, .Btn {
+  background: #4a90e2;
+  padding: 10px 20px;
   border: none;
-  
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
 }
-.model {
-  /* display: flex; */
-  display: none;
+
+.newBtn:hover, .Btn:hover {
+  background: #357abd;
+  transform: scale(1.05);
 }
+
+.cancel {
+  background: #e74c3c;
+}
+
+/* Grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: darkgrey;
-  padding: 10px;
-  border-radius: 5px;
+  gap: 15px;
   margin-top: 20px;
 }
 
+/* Card */
 .card {
-  margin: 7px;
-  padding: 10px;
-  position: relative;
-  border: none;
-  background-color: azure;
-  border-radius: 5px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.3s;
 }
 
-.action {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  background-color: aliceblue;
-  padding: 10px;
-  gap: 20px;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-.Btn {
-  background-color: rgb(77, 77, 241);
-  width: auto;
-  padding: 10px 20px; 
-  color: white;
-  border-radius: 5px;
-  border: none;
-}
-
-/* Overlay background */
+/* Popup background */
 .model {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* dim background */
-  display: flex;
+  background: rgba(0,0,0,0.5);
+
+  display: none; /* IMPORTANT */
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
-/* Popup box */
-.model-content {
-  background: #fff;
-  padding: 25px 20px;
-  width: 350px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  animation: popupFade 0.3s ease;
+/* Show popup */
+.model.show {
+  opacity: 1;
+  visibility: visible;
 }
 
-/* Inputs & textarea */
+/* Popup box */
+.model-content {
+  background: white;
+  padding: 25px;
+  width: 320px;
+  border-radius: 12px;
+  text-align: center;
+
+  transform: translateY(-30px);
+  transition: 0.3s;
+}
+
+.model.show .model-content {
+  transform: translateY(0);
+}
+
+/* Inputs */
 .model-content input,
 .model-content textarea {
   width: 100%;
-  margin-bottom: 12px;
   padding: 10px;
-  border: 1px solid #ddd;
+  margin-top: 10px;
   border-radius: 8px;
-  font-size: 14px;
-  outline: none;
-  transition: 0.2s;
+  border: 1px solid #ccc;
 }
 
-/* Focus effect */
-.model-content input:focus,
-.model-content textarea:focus {
-  border-color: #4a90e2;
-  box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
-}
-
-/* Textarea resize control */
-.model-content textarea {
-  resize: none;
-  min-height: 80px;
-}
-
-/* Optional button style */
-.model-content button {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  background: #4a90e2;
-  color: white;
-  border-radius: 8px;
-  font-size: 15px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.model-content button:hover {
-  background: #357abd;
-}
-
-/* Animation */
-@keyframes popupFade {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+/* Actions */
+.action {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
 }
