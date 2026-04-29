@@ -19,8 +19,11 @@ let products = [
   }
 ];
 
+// let count = document.getElementById("count");
 const container = document.getElementById("productContainer");
+let newBtn = document.getElementById("newBtn");
 const modal = document.getElementById("modal");
+
 
 const nameInput = document.getElementById("nameInput");
 const priceInput = document.getElementById("priceInput");
@@ -30,6 +33,12 @@ const updateBtn = document.getElementById("updateBtn");
 const cancelBtn = document.getElementById("cancelBtn");
 
 let currentProductId = null;
+
+function count () {
+  document.getElementById("count").textContent = products.length;
+}
+
+count();
 
 // Render Products
 function renderProducts() {
@@ -98,6 +107,18 @@ window.addEventListener("click", (e) => {
     document.querySelectorAll(".dropdown").forEach(d => d.style.display = "none");
   }
 });
+
+newBtn.addEventListener("click",() => {
+  document.getElementById("nameInput").value;
+  document.getElementById("Description").value;
+
+  let card = document.createElement("div");
+  card.classList.add("card");
+  card.innerHTML = `
+  ${priceInput} ${description}
+  `
+  newCard.appendChild(card);
+})
 
 // Initial render
 renderProducts();

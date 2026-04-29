@@ -22,9 +22,28 @@ let data = JSON.parse(localStorage.getItem("Students")) || [];
 data.push(obj);
 localStorage.setItem("Students", JSON.stringify(data));
 
+showText();
+
+
 document.getElementById("name").value = "";
 document.getElementById("studentClass").value = "";
 }
+
+function showText() {
+  let value1 = document.getElementById("name").value;
+  let value2 = document.getElementById("studentClass").value;
+  let data = {
+    name : name,
+    class : studentClass
+  }
+  localStorage.setItem("Students",JSON.stringify(data));
+  document.getElementById("outPut").innerText = `${value1} ${value2}`; 
+
+}
+
+// window.onload = function () {
+//   showText();
+// }
 
 // takeData();
 
