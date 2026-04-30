@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Set Get with Delete Row</title>
+
+<style>
+
+    body {
+
+        text-align: center;
+
+        font-family: Arial;
+
+    }
+
+    input, button {
+
+        padding: 8px;
+
+        margin: 10px;
+
+    }
+
+    table {
+
+        margin: auto;
+
+        border-collapse: collapse;
+
+        width: 60%;
+
+    }
+
+    th, td {
+
+        border: 1px solid black;
+
+        padding: 10px;
+
+    }
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<h2>Set & Get with Delete Row</h2>
+
+
+
+<input type="text" id="name" placeholder="Enter Name">
+
+<input type="number" id="age" placeholder="Enter Age">
+
+<br>
+
+
+
+<button onclick="setData()">Set Data</button>
+
+<button onclick="getData()">Get Data</button>
+
+
+
+<table id="table">
+
+<tr>
+
+    <th>Name</th>
+
+    <th>Age</th>
+
+    <th>Action</th>
+
+</tr>
+
+</table>
+
+
+
+<script>
+
+class Student {
+
+    constructor() {
+
+        this._name = "";
+
+        this._age = "";
+
+    }
+
+
+
+    set name(n) {
+
+        this._name = n;
+
+    }
+
+
+
+    set age(a) {
+
+        this._age = a;
+
+    }
+
+
+
+    get name() {
+
+        return this._name;
+
+    }
+
+
+
+    get age() {
+
+        return this._age;
+
+    }
+
+}
+
+
+
+let s = new Student();
+
+
+
+function setData() {
+
+    s.name = document.getElementById("name").value;
+
+    s.age = document.getElementById("age").value;
+
+
+
+    alert("Data Stored");
+
+}
+
+
+
+function getData() {
+
+    let table = document.getElementById("table");
+
+    let row = table.insertRow();
+
+
+
+    row.insertCell(0).innerHTML = s.name;
+
+    row.insertCell(1).innerHTML = s.age;
+
+
+
+    // Delete button
+
+    let actionCell = row.insertCell(2);
+
+    actionCell.innerHTML = '<button onclick="deleteRow(this)">Delete</button>';
+
+}
+
+
+
+// delete function
+
+function deleteRow(btn) {
+
+    let row = btn.parentNode.parentNode;
+
+    row.remove();
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>
