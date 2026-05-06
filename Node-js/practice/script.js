@@ -1,1 +1,3 @@
-console.log("Node project is running 🚀");
+export function add (a,b) {
+  return a + b;
+}
