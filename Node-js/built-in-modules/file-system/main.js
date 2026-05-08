@@ -1,0 +1,1 @@
+console.log('hello i am hte file in other folder')
