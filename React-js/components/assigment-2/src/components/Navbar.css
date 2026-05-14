@@ -1,0 +1,15 @@
+
+.Header-left {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.header-right {
+    margin-left: 270px;
+    ;
+}
+
+header {
+    display: flex;
+}

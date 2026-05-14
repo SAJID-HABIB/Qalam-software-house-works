@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products App</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+
+<div class="top-bar">
+
+  <h3>
+    Products:
+    <span id="count">0</span>
+  </h3>
+
+  <input id="search" placeholder="Search">
+
+  <input type="number" id="min" placeholder="Min">
+
+  <input type="number" id="max" placeholder="Max">
+
+  <button id="filterBtn">
+    Filter
+  </button>
+
+  <select id="sort">
+
+    <option value="">Sort</option>
+
+    <option value="low">
+      Low → High
+    </option>
+
+    <option value="high">
+      High → Low
+    </option>
+
+  </select>
+
+  <!-- ✅ ADD THIS -->
+  <label>
+
+    <input
+    type="checkbox"
+    id="selectAll">
+
+    Select All
+
+  </label>
+
+  <button id="deleteBtn">
+    Delete
+  </button>
+
+</div>
+
+
+<!-- ADD FORM -->
+
+<form id="productForm" class="form">
+
+  <input id="name"
+  placeholder="Product Name"
+  required>
+
+  <input id="price"
+  type="number"
+  placeholder="Price"
+  required>
+
+  <input id="category"
+  placeholder="Category"
+  required>
+
+  <button>Add Product</button>
+
+</form>
+
+
+
+<div id="productContainer"></div>
+
+
+
+<!-- UPDATE MODAL -->
+
+<div id="updateModal" class="modal">
+
+  <form id="updateForm"
+  class="modal-content">
+
+    <h2>Update Product</h2>
+
+    <input id="updateName" required>
+
+    <input id="updatePrice"
+    type="number"
+    required>
+
+    <input id="updateCategory"
+    required>
+
+    <button>Update</button>
+
+  </form>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

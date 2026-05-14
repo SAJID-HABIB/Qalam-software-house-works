@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1778588150212,
+    "name": "sajid",
+    "price": 3452,
+    "category": "man"
+  },
+  {
+    "id": 1778525492529,
+    "name": "shash",
+    "price": 237,
+    "category": "wdhw"
+  },
+  {
+    "id": 1778501187666,
+    "name": "phone",
+    "price": 2235,
+    "category": "andriod"
+  },
+  {
+    "id": 1,
+    "name": "Laptop",
+    "price": 50000,
+    "category": "Electronics"
+  },
+  {
+    "id": 2,
+    "name": "Phone",
+    "price": 30000,
+    "category": "Electronics"
+  }
+]

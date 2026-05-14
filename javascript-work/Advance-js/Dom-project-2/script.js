@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 let products = [
   { 
     id: 1, 
@@ -29,7 +28,7 @@ const modal = document.getElementById("modal");
 const nameInput = document.getElementById("nameInput");
 const priceInput = document.getElementById("priceInput");
 const description = document.getElementById("Description");
-=======
+
 const products = [
   { id: 1, name: "Laptop", price: 1000 },
   { id: 2, name: "Phone", price: 500 },
@@ -41,22 +40,18 @@ const modal = document.getElementById("modal");
 
 const nameInput = document.getElementById("nameInput");
 const priceInput = document.getElementById("priceInput");
->>>>>>> 72629c7b5990ca321c3ea235d744e4da1a6af729
 
 const updateBtn = document.getElementById("updateBtn");
 const cancelBtn = document.getElementById("cancelBtn");
 
 let currentProductId = null;
 
-<<<<<<< HEAD
 function count () {
   document.getElementById("count").textContent = products.length;
 }
 
 count();
 
-=======
->>>>>>> 72629c7b5990ca321c3ea235d744e4da1a6af729
 // Render Products
 function renderProducts() {
   container.innerHTML = "";
@@ -71,13 +66,10 @@ function renderProducts() {
         <button class="edit-btn">Update</button>
       </div>
       <h3>${product.name}</h3>
-<<<<<<< HEAD
       <p>${product.price}</p>
       <P>${product.description}</P>
-=======
       <p>$${product.price}</p>
->>>>>>> 72629c7b5990ca321c3ea235d744e4da1a6af729
-    `;
+    `;;
 
     const menuBtn = card.querySelector(".menu-btn");
     const dropdown = card.querySelector(".dropdown");
@@ -95,10 +87,7 @@ function renderProducts() {
 
       nameInput.value = product.name;
       priceInput.value = product.price;
-<<<<<<< HEAD
       description.value = product.description;
-=======
->>>>>>> 72629c7b5990ca321c3ea235d744e4da1a6af729
 
       modal.style.display = "block";
       dropdown.style.display = "none";
@@ -114,10 +103,7 @@ updateBtn.addEventListener("click", () => {
 
   product.name = nameInput.value;
   product.price = priceInput.value;
-<<<<<<< HEAD
   product.description = description.value;
-=======
->>>>>>> 72629c7b5990ca321c3ea235d744e4da1a6af729
 
   renderProducts();
   modal.style.display = "none";
@@ -128,14 +114,13 @@ cancelBtn.addEventListener("click", () => {
   modal.style.display = "none";
 });
 
-// Close dropdown on outside click
 window.addEventListener("click", (e) => {
   if (!e.target.classList.contains("menu-btn")) {
     document.querySelectorAll(".dropdown").forEach(d => d.style.display = "none");
   }
 });
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
 newBtn.addEventListener("click",() => {
   document.getElementById("nameInput").value;
   document.getElementById("Description").value;
@@ -148,7 +133,5 @@ newBtn.addEventListener("click",() => {
   newCard.appendChild(card);
 })
 
-=======
->>>>>>> 72629c7b5990ca321c3ea235d744e4da1a6af729
 // Initial render
 renderProducts();
