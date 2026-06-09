@@ -37,7 +37,7 @@ function Login() {
   };
 
   return (
-    <form onSubmit={handleLogin}>
+    <form onSubmit={handleLogin} className="min-h-screen">
       <input
         placeholder="Email"
         onChange={(e) =>
