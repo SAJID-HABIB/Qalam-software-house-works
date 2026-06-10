@@ -1,37 +1,31 @@
-const express = require ("express");
-const router = express.Router();
+const express =
+  require("express");
 
-const User = require("../models/User");
-// const { use } = require("react");
+const router =
+  express.Router();
 
-router.post("/signup",async (req, res) => {
-  const {name, email, password} = req.body;
+const {
+  signup,
+  login
+} = require(
+  "../controllers/authController"
+);
 
-  const user = await User.create({
-  name,
-  email,
-  password
-});
-res.json(user);
-})
+const {
+  signupValidation
+} = require(
+  "../middleware/authValidation"
+);
 
-router.post("/login",async(req, res) => {
-  const {email, password} = req.body;
+router.post(
+  "/signup",
+  signupValidation,
+  signup
+);
 
-  const user = await User.findOne({
-    email
-  })
-  if (!user || user.password !== password) {
-  return res.json({
-    message : "Invalid user"
-  });
-}
-res.json({
-  message : "login successfully"
-})
-
-})
-
-
+router.post(
+  "/login",
+  login
+);
 
 module.exports = router;
