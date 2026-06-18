@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Signup() {
@@ -35,82 +36,99 @@ function Signup() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 py-10">
-  <div className="w-full max-w-2xl bg-white p-8 rounded-2xl shadow-lg">
+   <div className="min-h-screen bg-gradient-to-br from-green-100 via-white to-green-200 flex items-center justify-center px-4 py-10">
 
-    <h1 className="text-3xl font-bold text-center mb-6">
-      Create Account
-    </h1>
+  <div className="w-full max-w-3xl bg-white rounded-3xl shadow-2xl p-8">
 
-    <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="text-center mb-8">
+      <h1 className="text-4xl font-bold text-gray-800">
+        Create Account
+      </h1>
+
+      <p className="text-gray-500 mt-2">
+        Fill in the information below
+      </p>
+    </div>
+
+    <form className="grid grid-cols-1 md:grid-cols-2 gap-5">
 
       <input
         name="firstName"
         placeholder="First Name"
-        className="border p-3 rounded-lg"
+        className="border border-gray-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500"
       />
 
       <input
         name="lastName"
         placeholder="Last Name"
-        className="border p-3 rounded-lg"
+        className="border border-gray-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500"
       />
 
       <input
         name="city"
         placeholder="City"
-        className="border p-3 rounded-lg"
+        className="border border-gray-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500"
       />
 
       <input
         name="mobileNumber"
         placeholder="Mobile Number"
-        className="border p-3 rounded-lg"
+        className="border border-gray-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500"
       />
 
       <input
         name="email"
-        placeholder="Email"
-        className="border p-3 rounded-lg md:col-span-2"
+        placeholder="Email Address"
+        className="md:col-span-2 border border-gray-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500"
       />
 
       <input
         type="password"
         name="password"
         placeholder="Password"
-        className="border p-3 rounded-lg"
+        className="border border-gray-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500"
       />
 
       <input
         type="password"
         name="confirmPassword"
         placeholder="Confirm Password"
-        className="border p-3 rounded-lg"
+        className="border border-gray-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500"
       />
 
-      <label className="md:col-span-2 flex items-center gap-2">
-        <input type="checkbox" />
+      <label className="md:col-span-2 flex items-center gap-3 text-gray-600">
+        <input
+          type="checkbox"
+          className="w-4 h-4"
+        />
         <span>
           I agree to Terms & Conditions
         </span>
       </label>
 
       <button
-        className="md:col-span-2 bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition"
+        className="md:col-span-2 bg-green-600 text-white py-3 rounded-xl font-semibold hover:bg-green-700 transition duration-300 shadow-md"
       >
         Create Account
       </button>
 
     </form>
 
-    <p className="text-center mt-4">
-      Already have an account?
-      <span className="text-blue-600 cursor-pointer ml-1">
-        Login
-      </span>
-    </p>
+    <div className="text-center mt-6">
+      <p className="text-gray-600">
+        Already have an account?
+
+        <Link
+          to="/"
+          className="ml-2 text-green-600 font-semibold hover:text-green-800 hover:underline"
+        >
+          Login
+        </Link>
+      </p>
+    </div>
 
   </div>
+
 </div>
   );
 }
