@@ -95,16 +95,43 @@ function Signup() {
         placeholder="Confirm Password"
         className="border border-gray-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500"
       />
+<div className="md:col-span-2">
+  <p className="mb-2 text-gray-700 font-medium">
+    Select Role
+  </p>
 
-      <label className="md:col-span-2 flex items-center gap-3 text-gray-600">
-        <input
-          type="checkbox"
-          className="w-4 h-4"
-        />
-        <span>
-          I agree to Terms & Conditions
-        </span>
-      </label>
+  <div className="flex gap-6">
+    <label className="flex items-center gap-2 cursor-pointer">
+      <input
+        type="radio"
+        name="role"
+        value="buyer"
+        className="w-4 h-4 accent-blue-600"
+      />
+      <span className="text-gray-700">Buyer</span>
+    </label>
+
+    <label className="flex items-center gap-2 cursor-pointer">
+      <input
+        type="radio"
+        name="role"
+        value="seller"
+        className="w-4 h-4 accent-blue-600"
+      />
+      <span className="text-gray-700">Seller</span>
+    </label>
+  </div>
+</div>
+
+<label className="md:col-span-2 flex items-center gap-3 text-gray-600 mt-4">
+  <input
+    type="checkbox"
+    className="w-4 h-4"
+  />
+  <span>
+    I agree to Terms & Conditions
+  </span>
+</label>
 
       <button
         className="md:col-span-2 bg-green-600 text-white py-3 rounded-xl font-semibold hover:bg-green-700 transition duration-300 shadow-md"
@@ -125,6 +152,7 @@ function Signup() {
           Login
         </Link>
       </p>
+      
     </div>
 
   </div>

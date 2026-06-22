@@ -17,7 +17,8 @@ const signup = async (
       city,
       mobileNumber,
       email,
-      password
+      password,
+      role
     } = req.body;
 
     const userExists =
@@ -31,7 +32,7 @@ const signup = async (
           "Email already exists"
       });
     }
-
+ const hashedPassword = await bcrypt.hash(password, 10);
     const user =
       await User.create({
         firstName,
@@ -39,10 +40,11 @@ const signup = async (
         city,
         mobileNumber,
         email,
-        password : hashedPassword
+        password : hashedPassword,
+        role
       });
 
-    res.json(user);
+    res.status(201).json(user);
 
   } catch (error) {
     res.status(500).json({
@@ -86,7 +88,7 @@ const login = async (
 
 
   if (!isMatch) {
-    return res.json({
+    return res.status.json({
       message: "Wrong Password"
     });
   }
