@@ -32,7 +32,7 @@ const signup = async (req, res) => {
 
     res.status(201).json(user);
   } catch (error) {
-    console.error("Signup Error Detailed:", error); // Terminal me check karne ke liye
+    console.error("Signup Error Detailed:", error);
     res.status(500).json({ message: error.message });
   }
 };

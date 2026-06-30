@@ -6,7 +6,7 @@ const { signup, login } = require("../controllers/authController");
 
 // const { signupValidation } = require("../middleware/authValidation");
 
-router.post("/signup", signup);
+router.post("/signup", signupValidation, signup);
 
 router.post("/login", login);
 
