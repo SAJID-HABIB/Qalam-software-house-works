@@ -9,7 +9,7 @@ fs.mkdir("new-folder",{ recursive: true },(err) => {
     console.log(err);
   }
   else {
-    console.log("Folder careted scuccessfully");
+    console.log("Folder created scussfully");
     
   }
 })

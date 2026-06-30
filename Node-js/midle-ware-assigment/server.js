@@ -16,7 +16,7 @@ app.use(logger);
 
 
 app.post("/signup", (req,res,next ) => {
-  let {name,email,password} = req.body;
+  let {name,email,password} = req.query;
 
   if (!name || !email || !password) {
     return res.status(400).send("all filed are required");
@@ -48,7 +48,7 @@ app.post("/signup", (req,res,next ) => {
 })
 
 app.post("/signin",(req,res,next) =>{
-  let {email, password} = req.body;
+  let {email, password} = req.query;
 
   let users = JSON.parse(fs.readFileSync("data.json","utf8"));
 

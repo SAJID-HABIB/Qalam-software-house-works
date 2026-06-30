@@ -8,14 +8,12 @@ let products = [
 let server = http.createServer((req,res) => {
   if (req.method === "GET" && req.url === "/products") {
     res.writeHead(200, {
-      "content-type" : "applicatio/json"
+      "content-type" : "application/json"
     })
-    
   }
   res.end(json.stringify(products));
 })
 
 server.listen(3000,() =>{
-  console.log("Get api is running");
-  
+  console.log("Get api is running"); 
 })

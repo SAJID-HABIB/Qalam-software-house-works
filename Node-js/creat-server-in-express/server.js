@@ -18,7 +18,7 @@ server.post("/write", function (req, res) {
     if (err) {
       res.send(err);
     } else {
-      res.send("file scussfully written");
+      res.send("file successfully written");
     }
   });
 });
@@ -34,5 +34,5 @@ server.delete("/delete", function (req, res) {
 });
 
 server.listen(8500, () => {
-  console.log("server is runing on port 8500");
+  console.log("server is running on port 8500");
 });
