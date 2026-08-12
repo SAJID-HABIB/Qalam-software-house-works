@@ -1,7 +1,7 @@
 import developerImg from "../../../assets/developer.png";
 const HeroSection = () => {
   return (
-    <section className="min-h-[calc(100vh-80px)] bg-slate-950 px-8 py-16 text-white">
+    <section className="min-h-[calc(100vh-80px)] bg-slate-950 px-8 pb-16 pt-32 text-white">
       {" "}
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-12 md:flex-row">
         {" "}
