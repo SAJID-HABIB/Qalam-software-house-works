@@ -25,7 +25,8 @@ function ContactSection() {
     }
     if (!formData.message.trim()) {
       newError.message = "Please enter your message.";
-    }
+    } 
+    
     setError(newError);
 
     return Object.keys(setError).length === 0;
