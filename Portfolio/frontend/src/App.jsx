@@ -8,7 +8,6 @@ function App() {
   return (
     <>
     <LandingPge></LandingPge>
-      {/* <h1 className='text-7xl'>hello sajid </h1> */}
     </>
   )
 }
