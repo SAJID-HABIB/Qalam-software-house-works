@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
+import createContact from "../api/contactApi.js"
 function ContactSection() {
   const [formData, setForm] = useState({
     name: "",
@@ -43,8 +44,15 @@ function ContactSection() {
       })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      const reponse = await createContact(formData);
+      console.log("api rseponse...",reponse);
+      
+    } catch (error) {
+      console.error("contact subtmission failed",error);
+    }
     const isValid = veliditonForm();
     if (isValid) {
       return;
