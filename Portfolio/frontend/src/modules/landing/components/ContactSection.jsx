@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
@@ -12,6 +12,14 @@ function ContactSection() {
   });
 
   const [error, setError] = useState({});
+  const [loding, setLoding] = useState(false);
+  const [success, setSuccess] = useState("");
+  useEffect(() =>{
+    const saveForm = localStorage.getItem("contactForm");
+    if (saveForm) {
+      setForm(JSON.parse(saveForm));
+    }
+  },[])
   function veliditonForm() {
     const newError = {};
     if (!formData.name.trim()) {
@@ -30,14 +38,17 @@ function ContactSection() {
     
     setError(newError);
 
-    return Object.keys(setError).length === 0;
+    return Object.keys(newError).length === 0;
   }
   function handleChange(e) {
     const { name, value } = e.target;
-    setForm({
+    
+    const updateForm = {
       ...formData,
       [name]: value,
-    });
+    };
+    setForm(updateForm);
+    localStorage.setItem("contactForm", JSON.stringify(updateForm));
     setError({
         ...error,
         [name]: "",
@@ -46,16 +57,27 @@ function ContactSection() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSuccess("");
+        const isValid = veliditonForm();
+    if (!isValid) {
+      return;
+    }
     try {
+      setLoding(true);
       const reponse = await createContact(formData);
       console.log("api rseponse...",reponse);
-      
+      setSuccess("your mssage has been sent successfully");
+      setForm({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      })
     } catch (error) {
       console.error("contact subtmission failed",error);
-    }
-    const isValid = veliditonForm();
-    if (isValid) {
-      return;
+      setSuccess("Contact submission failed. Please try again.");
+    } finally{
+      setLoding(false);
     }
     console.log("Form data :", formData);
   };
@@ -169,6 +191,9 @@ function ContactSection() {
               onSubmit={handleSubmit}
               className="mt-6 space-y-5"
             >
+              {success && (
+                <p className="rounded-lg bg-green-500/10 px-4 py-3 text-sm text-green-400">{success}</p>
+              )}
               {/* Name */}
               <div>
                 <label
@@ -271,9 +296,10 @@ function ContactSection() {
               {/* Submit */}
               <button
                 type="submit"
-                className="w-full rounded-lg bg-blue-600 px-5 py-3 font-semibold text-white transition hover:bg-blue-700"
+                disabled={loding}
+                 className="w-full rounded-lg bg-blue-600 px-5 py-3 font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Send Message
+                {loding ? "sending...": "send message"}
               </button>
             </form>
           </div>
